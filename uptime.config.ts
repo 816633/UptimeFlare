@@ -128,6 +128,8 @@ const workerConfig: WorkerConfig = {
       timeout: 10000,
     }
   ],
+  // 仅保留复杂样式的邮件发送，简单的注释掉
+  /*
   notification: {
     // [Optional] Notification webhook settings, if not specified, no notification will be sent
     // More info at Wiki: https://github.com/lyc8503/UptimeFlare/wiki/Setup-notification
@@ -165,6 +167,7 @@ const workerConfig: WorkerConfig = {
     // if not specified, notification will be sent immediately
     //gracePeriod: 5,
   },
+   */
   callbacks: {
     onStatusChange: async (
       env: any,
@@ -185,7 +188,7 @@ const workerConfig: WorkerConfig = {
         try {
           const statusText = isUp ? '恢复正常 (UP)' : '服务中断 (DOWN)';
           const color = isUp ? '#4ade80' : '#ef4444'; // green-400 : red-500
-          const subject = `[${statusText}] ${monitor.name} 状态变更通知`;
+          const subject = `[${monitor.name}（${statusText}）] 状态变更通知`;
           
           // 尝试格式化时间
           let timeString = new Date(timeNow * 1000).toISOString();
@@ -196,9 +199,9 @@ const workerConfig: WorkerConfig = {
           const htmlContent = `
             <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 5px;">
               <h2 style="color: ${color};">${statusText}</h2>
-              <p><strong>监控名称:</strong> ${monitor.name}</p>
-              <p><strong>时间:</strong> ${timeString}</p>
-              <p><strong>原因:</strong> ${reason}</p>
+              <p><strong>监控名称：</strong> ${monitor.name}</p>
+              <p><strong>时间：</strong> ${timeString}</p>
+              <p><strong>原因：</strong> ${reason}</p>
               <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
               <p style="font-size: 12px; color: #888;">来自 UptimeFlare 的监控报警</p>
             </div>

@@ -115,9 +115,10 @@ jobs:
             -H "Content-Type: application/json" \
             --data-binary @- <<EOF
           {
-            "secrets": [
+            "bindings": [
               {
                 "name": "RESEND_API_KEY",
+                "type": "secret_text",
                 "text": "${RESEND_API_KEY}"
               }
             ]

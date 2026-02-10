@@ -109,21 +109,13 @@ jobs:
         run: |
           echo "Uploading RESEND_API_KEY to Cloudflare Worker (uptimeflare_worker)"
 
-          curl -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/uptimeflare_worker/secrets" \
+          curl -s -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/uptimeflare_worker/secrets/RESEND_API_KEY" \
             -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
             -H "Content-Type: application/json" \
-            --data-binary @- <<EOF
-          {
-            "bindings": [
-              {
-                "name": "RESEND_API_KEY",
-                "type": "secret_text",
-                "text": "${RESEND_API_KEY}"
-              }
-            ]
-          }
-          EOF
+            --data-raw '{
+              "text": "'"${RESEND_API_KEY}"'"
+            }' | jq .      
 
       # Currently Terraform Cloudflare provider doesn't support direct upload, use wrangler to upload instead.
       - name: Upload pages

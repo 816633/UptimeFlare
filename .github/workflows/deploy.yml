@@ -116,8 +116,7 @@ jobs:
             --data-raw '{
               "text": "'"${RESEND_API_KEY}"'"
             }' | jq .
-
-
+            
       # Currently Terraform Cloudflare provider doesn't support direct upload, use wrangler to upload instead.
       - name: Upload pages
         run: |

@@ -109,16 +109,6 @@ const workerConfig: WorkerConfig = {
       timeout: 10000,
     },
     {
-      id: 'contact',
-      name: '联系方式页面',
-      method: 'HEAD',
-      target: 'https://contact.dabaimc.top/',
-      statusPageLink: 'https://contact.dabaimc.top/',
-      hideLatencyChart: false,
-      expectedCodes: [200],
-      timeout: 10000,
-    },
-    {
       id: 'zj_bot',
       name: '自建人机验证',
       method: 'HEAD',

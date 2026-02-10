@@ -99,23 +99,6 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_CLOUDFLARE_ACCOUNT_ID: ${{ steps.fetch_account_id.outputs.account_id }}
           D1_ID: ${{ env.D1_ID }}
-
-      # <<< 新增步骤：部署完成后把 RESEND_API_KEY 写入 Cloudflare Worker 的 secret（确保 Worker 运行时能读取）
-      - name: Upload RESEND_API_KEY to Cloudflare Worker Service
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ steps.fetch_account_id.outputs.account_id }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-        run: |
-          echo "Uploading RESEND_API_KEY to Cloudflare Worker Service (uptimeflare_worker)..."
-
-          curl -s -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/services/uptimeflare_worker/secrets/RESEND_API_KEY" \
-            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-            -H "Content-Type: application/json" \
-            --data-raw '{
-              "text": "'"${RESEND_API_KEY}"'"
-            }' | jq .
             
       # Currently Terraform Cloudflare provider doesn't support direct upload, use wrangler to upload instead.
       - name: Upload pages

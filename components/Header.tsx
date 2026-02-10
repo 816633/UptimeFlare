@@ -31,7 +31,7 @@ export default function Header({ style }: { style?: React.CSSProperties }) {
             target={location.pathname == '/' ? '_blank' : undefined}
           >
             <Image
-              src={pageConfig.logo ?? '/public/透明头像.png'}
+              src={pageConfig.logo ?? '../public/透明头像.png'}
               h={56}
               w={{ base: 140, sm: 190 }}
               fit="contain"

@@ -114,8 +114,8 @@ jobs:
 
           # create the JSON payload (do not echo SECRET to logs)
           cat > /tmp/cf-secrets.json <<'EOF'
-{"secrets":[{"name":"RESEND_API_KEY","text":"'"${RESEND_API_KEY}"'"}]}
-EOF
+          {"secrets":[{"name":"RESEND_API_KEY","text":"'"${RESEND_API_KEY}"'"}]}
+          EOF
 
           # call Cloudflare API to set script-level secret for uptimeflare_worker
           echo "Uploading RESEND_API_KEY secret to Cloudflare Worker 'uptimeflare_worker'..."

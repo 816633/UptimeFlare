@@ -27,11 +27,11 @@ export default function Header({ style }: { style?: React.CSSProperties }) {
       <Container size="md" className={classes.inner}>
         <div>
           <a
-            href={location.pathname == '/' ? 'https://github.com/lyc8503/UptimeFlare' : '/'}
+            href={location.pathname == '/' ? 'https://www.dabaimc.top/' : '/'}
             target={location.pathname == '/' ? '_blank' : undefined}
           >
             <Image
-              src={pageConfig.logo ?? '/logo.svg'}
+              src={pageConfig.logo ?? 'https://vip.123pan.cn/1838613325/ymjew503t0l000d5qave6rf3dz77uj2xDIYwBdQPDwDvAGxPDIQP.png'}
               h={56}
               w={{ base: 140, sm: 190 }}
               fit="contain"

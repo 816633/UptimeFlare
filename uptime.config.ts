@@ -105,7 +105,7 @@ const workerConfig: WorkerConfig = {
       id: 'blog_img_global',
       name: '主站图床（全球）',
       method: 'GET',
-      target: 'https://img.dabaimc.top/',
+      target: 'https://img.dabaimc.top/index.html',
       hideLatencyChart: false,
       expectedCodes: [200],
       timeout: 10000,

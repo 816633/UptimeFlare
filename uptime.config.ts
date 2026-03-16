@@ -93,15 +93,6 @@ const workerConfig: WorkerConfig = {
       timeout: 10000,
     },
     {
-      id: 'blog_img_Chinese-mainland',
-      name: '主站图床（内地）',
-      method: 'HEAD',
-      target: 'https://vip.123pan.cn/1838613325/ymjew503t0l000dck9t58sphyg6i07k0DIYwBdQPDwDvAGxPDIQP.png/',
-      hideLatencyChart: false,
-      expectedCodes: [200],
-      timeout: 10000,
-    },
-    {
       id: 'blog_img_global',
       name: '主站图床（全球）',
       method: 'GET',
@@ -229,7 +220,7 @@ const workerConfig: WorkerConfig = {
 
           const resendPayload = {
             from: "系统状态更新 <uptimeflare@dabaimc.top>",
-            to: ["a816633@foxmail.com"],
+            to: ["dabaimc@qq.com"],
             subject: subject,
             html: htmlContent,
           };

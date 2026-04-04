@@ -55,7 +55,7 @@ const workerConfig: WorkerConfig = {
     {
       id: 'root_com_1',
       name: '根域名1',
-      method: 'GET',
+      method: 'HEAD',
       target: 'https://dabaimc.top/',
       statusPageLink: 'https://dabaimc.top/',
       hideLatencyChart: false,
@@ -65,7 +65,7 @@ const workerConfig: WorkerConfig = {
     {
       id: 'root_com_2',
       name: '根域名2',
-      method: 'GET',
+      method: 'HEAD',
       target: 'https://816633.xyz/',
       statusPageLink: 'https://816633.xyz/',
       hideLatencyChart: false,
@@ -75,7 +75,7 @@ const workerConfig: WorkerConfig = {
     {
       id: 'blog',
       name: '主站',
-      method: 'GET',
+      method: 'HEAD',
       target: 'https://www.dabaimc.top/',
       statusPageLink: 'https://www.dabaimc.top/',
       hideLatencyChart: false,
@@ -85,7 +85,7 @@ const workerConfig: WorkerConfig = {
     {
       id: 'blog_contact',
       name: '联系方式页面',
-      method: 'GET',
+      method: 'HEAD',
       target: 'https://contact.dabaimc.top/',
       statusPageLink: 'https://contact.dabaimc.top/',
       hideLatencyChart: false,
@@ -95,25 +95,25 @@ const workerConfig: WorkerConfig = {
     {
       id: 'blog_img_global',
       name: '主站图床（全球）',
-      method: 'GET',
+      method: 'HEAD',
       target: 'https://img.dabaimc.top/index.html',
       hideLatencyChart: false,
       expectedCodes: [200],
       timeout: 10000,
     },
-    {
+    /*{
       id: 'blog_annex',
       name: '主站附件管理',
-      method: 'GET',
+      method: 'HEAD',
       target: 'https://oss-hk.dabaimc.top/',
       hideLatencyChart: false,
       expectedCodes: [200],
       timeout: 10000,
-    },
+    },*/
     {
       id: 'blog_tool',
       name: '网站辅助工具',
-      method: 'GET',
+      method: 'HEAD',
       target: 'https://tool.dabaimc.top/',
       hideLatencyChart: false,
       expectedCodes: [200],
@@ -122,7 +122,7 @@ const workerConfig: WorkerConfig = {
     {
       id: 'zj_bot',
       name: '自建人机验证',
-      method: 'GET',
+      method: 'HEAD',
       target: 'https://verify-api.dabaimc.top/',
       hideLatencyChart: false,
       expectedCodes: [200],
@@ -131,7 +131,7 @@ const workerConfig: WorkerConfig = {
     {
       id: 'server_looking',
       name: '服务器监控系统',
-      method: 'GET',
+      method: 'HEAD',
       target: 'https://monitoring.dabaimc.top/',
       statusPageLink: 'https://monitoring.dabaimc.top/',
       hideLatencyChart: false,

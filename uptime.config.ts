@@ -101,15 +101,15 @@ const workerConfig: WorkerConfig = {
       expectedCodes: [200],
       timeout: 10000,
     },
-    /*{
+    {
       id: 'blog_annex',
       name: '主站附件管理',
       method: 'HEAD',
-      target: 'https://oss-hk.dabaimc.top/',
+      target: 'https://oss-global.dabaimc.top/',
       hideLatencyChart: false,
       expectedCodes: [200],
       timeout: 10000,
-    },*/
+    },
     {
       id: 'blog_tool',
       name: '网站辅助工具',

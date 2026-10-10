@@ -103,7 +103,7 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'blog_annex',
-      name: '主站附件下载（全球）',
+      name: '主站附件下载（全球） / Main Site Attachment Downloads (Global)',
       method: 'HEAD',
       target: 'https://oss-global.dabaimc.top/',
       hideLatencyChart: false,

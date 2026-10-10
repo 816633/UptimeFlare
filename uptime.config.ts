@@ -102,6 +102,15 @@ const workerConfig: WorkerConfig = {
       timeout: 10000,
     },
     {
+      id: 'blog_annex',
+      name: '主站附件下载（全球）',
+      method: 'HEAD',
+      target: 'https://oss-global.dabaimc.top/',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+      timeout: 10000,
+    },
+    {
       id: 'zj_bot',
       name: 'MC 人机验证 / Minecraft CAPTCHA',
       method: 'HEAD',
